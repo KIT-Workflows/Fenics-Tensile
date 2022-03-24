@@ -1,0 +1,7 @@
+E: 300.0
+Import-inputs: false
+diameter: 150.0
+displacement: '[ [  0.0 , -1.0 , -2.5 ] ] '
+height: 100.0
+input-file: input
+nu: 0.2

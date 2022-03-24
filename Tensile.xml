@@ -1,0 +1,41 @@
+<WaNoTemplate>
+    
+    <WaNoMeta>
+ 		<Author>
+  			<Name> Celso R. C. Rego </Name>
+  			<Email>celsorego@kit.edu</Email>
+ 		</Author>
+
+		<Description>
+   			This WaNo uses the Finite Element Fenics library to compute tensile properties
+ 		</Description>
+
+ 		<Keyword>Finite Element</Keyword>
+	</WaNoMeta>
+	
+	<WaNoRoot name="Tensile">
+		
+		<WaNoBool name="Import-inputs">False</WaNoBool>
+  		<WaNoFile logical_filename="input.json" visibility_condition="%s == True"
+			visibility_var_path="Import-inputs" name="input-file">/home/path</WaNoFile>
+
+		<WaNoFloat visibility_condition="%s == False" visibility_var_path="Import-inputs" name="E" description="Young's modulus for simulation">300</WaNoFloat>
+		<WaNoFloat visibility_condition="%s == False" visibility_var_path="Import-inputs" name="nu" description="Poisson's ratio for simulation">0.2</WaNoFloat>
+		<WaNoFloat visibility_condition="%s == False" visibility_var_path="Import-inputs" name="height" description="Height of test cylinder in mm">100.0</WaNoFloat>
+		<WaNoFloat visibility_condition="%s == False" visibility_var_path="Import-inputs" name="diameter" description="Diameter of test cylinder in mm">150.0</WaNoFloat>
+		<WaNoMatrixFloat visibility_condition="%s == False" visibility_var_path="Import-inputs" rows="1" cols="3" col_header="d1; d2; d3" row_header="displ" name="displacement" description="A list with all displ to be applied">[[0.0,-1.0, -2.5]]</WaNoMatrixFloat>	
+	</WaNoRoot>
+	
+	<WaNoExecCommand>
+		source  /home/ws/gt5111/miniconda3/etc/profile.d/conda.sh
+		conda activate fenicsproject
+		python tensile.py
+	</WaNoExecCommand>
+	
+	<WaNoInputFiles>
+		<WaNoInputFile logical_filename="tensile.py">tensile.py</WaNoInputFile>
+	</WaNoInputFiles>
+	<WaNoOutputFiles>
+		<WaNoOutputFile>output.json</WaNoOutputFile>
+	</WaNoOutputFiles>
+</WaNoTemplate>
