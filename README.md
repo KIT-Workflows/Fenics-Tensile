@@ -11,31 +11,17 @@ This WaNo uses the Finite Element Fenics library to compute the tensile properti
 - pyymal
 ```
 
-# Installation:
-create a conda environment either locally (as shown here) using 
+# Create a conda environment:
 ```
-conda env create -f --prefix ./conda-env environment.yml
-```
-Alternative, you could also use the script 
-```
-make_environment.sh 
-```
-that either creates a new local environment or updates the existing one. 
-
-Afterwards, activate the conda environment
-```
-conda activate ./conda-env 
-```
-and execute the script that creates a "~.pyiron" config file with the 
-information where the scripts for the new script jobs are located.
-```
-python pyiron/pyiron_config.py
+conda create -n fenicsproject python=3.9 numpy fenics==2019.1.0 mshr==2019.1.0 pyyaml
 ```
 
-# Usage
-script jobs have to be added to the resources/templates directory. Just add 
-a new directory (the name is then automtically the jobname in pyiron) and 
-add an input.json and a script.py in the newly created directory. 
+Alternatively, you can run the script locally by executing the command below in the same folder where you saved the input (input.json). 
 
-The script.py should include your job definition, whereas the input.json 
-defines standard parameters that can be changed.
+```
+python tensile.py
+```
+
+# Usage in SimStack
+
+For this particular WaNo, you can run it in the mode, where you insert the parameter manually or by loading the inputs from a given '.json' file.
