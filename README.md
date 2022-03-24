@@ -1,7 +1,15 @@
 # Fenics-Tensile
+
 This WaNo uses the Finite Element Fenics library to compute the tensile properties of a cylindric body.
 
-This is an example project on howto include script jobs in pyiron.
+# Python dependencies
+
+```
+- python==3.9
+- fenics==2019.1.0
+- mshr==2019.1.0
+- pyymal
+```
 
 # Installation:
 create a conda environment either locally (as shown here) using 
