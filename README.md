@@ -24,9 +24,9 @@ python tensile.py
 
 # Usage in SimStack
 
-For this particular WaNo, as shown in the figure below, you can run it in the mode, where you insert the parameter manually or by loading the inputs from a given '.json' file.
+For this particular WaNo, as shown in the figure below, you can run it in the mode, where you insert the parameter interactively via the SimStack GUI or by loading the inputs from a given '.json' file.
 
 <img src="fenics_tensile.png" alt="drawing" width="800"/>
 
-**Fig 1** The DFT-VASP WaNo performs DFT calculation using Vasp code. In this WaNo, the POTCAR might be automatized after reading the POSCAR file. In the GUI, we can set the KPOINTS and INCAR files, but there is also the option to load the inputs file in the Files_Run tab.
+**Fig 1** This WaNo allows the inputs to come from ` .json` files or by changing the exposed parameter values in the GUI.
 
